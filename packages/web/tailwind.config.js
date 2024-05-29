@@ -32,6 +32,7 @@ export default {
       // 适用 color, background-color, border-color
       colors: {
         // 这里的命令明确使用场景，颜色，深浅
+        red: 'red',
         grayLight: 'rgba(0, 0, 0, 0.54)', // 通用灰色浅色
         bgGrayLight:'#f5f5f5',    // 背景灰色浅色
         linkBlueLight: '#828DD3', // 超链接蓝色浅色
