@@ -31,10 +31,11 @@ interface IFormError {
 }
 export interface IFormOptions<T> {
     initFields?: Partial<T>
+    always?: boolean
 }
 export type IFormValidation<T> = {
     [key in keyof T]: {
-        [key in ValidationType]?: ValidationValue
+        [key in ValidationType]?: key extends 'required' ?  ValidationValue | string : ValidationValue
     }
 }
 type IFormErrors<T extends Record<string, any>> = {
@@ -80,7 +81,17 @@ export const useFormValidation = <T extends Record<string, any>>(validations: IF
         return {
             ...prev,
             [field]: Object.keys(validation).map((item) => {
-                const { value = true, message } = validation[item as keyof ValidationItem]!
+                const vItem = validation[item as keyof ValidationItem]
+                let value
+                let message
+                if (typeof vItem === 'string') {
+                    // 如果规则的值只是字符串，这转换成 { value: true , message : 规则字符串 }
+                    message = vItem
+                    value = true
+                } else {
+                    value = vItem?.value || true
+                    message = vItem?.message
+                }
                 return {
                     value: ValidationBuiltinFunctions[item as keyof ValidationItem](value), // Todo Type
                     message: checkFunc(message)
@@ -124,7 +135,11 @@ export const useFormValidation = <T extends Record<string, any>>(validations: IF
         watch(
             () => _formFields[field],
             (value, prevVal) => {
-                if (value !== prevVal) {
+                if(options?.always){
+                    _fields.forEach(item => {
+                        validator(String(item))
+                    })
+                }else if (value !== prevVal) {
                     _formErrors[field].error = false
                     _formErrors[field].message = ''
                 }

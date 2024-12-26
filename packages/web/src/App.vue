@@ -60,10 +60,7 @@ interface IFormData {
 }
 const validations:IFormValidation<IFormData> = {
     phone: {
-        required: {
-            value: true,
-            message: '请输入手机号码'
-        },
+        required: '请输入手机号码',
         phoneCN: {
             value: () => gsmInfo.gsmCode == '+86',
             message: '中国大陆手机号码不正确'
