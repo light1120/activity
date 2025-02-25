@@ -5,7 +5,7 @@ const phoneCNRegExp = /^1[345789]\d{9}$/
 const phoneHKRegExp = /^([6|9])\d{7}$/
 const IdCNRegExp = /^[1-9]\d{5}(18|19|20)\d{2}(0[1-9]|1[0-2])(0[1-9]|[12]\d|3[01])\d{3}(\d|X|x)$/
 const IdHKRegExp = /^[A-Z]{1,2}[0-9]{6}[A0-9]$/
-const emailRegExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+const emailRegExp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
 
 // 可支持的校验类型
 type ValidationType =

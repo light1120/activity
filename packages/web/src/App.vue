@@ -16,7 +16,7 @@
           class="w-full h-80 border-b-2 border-black focus:border-red outline-none text-32 placeholder:text-gray-300"
           placeholder="请输入手机号码"
         />
-        <p class="mt-8 text-red font-12" v-if="formErrors.phone.error">{{ formErrors.phone.message }}</p>
+        <p v-if="formErrors.phone.error" class="mt-8 text-red font-12">{{ formErrors.phone.message }}</p>
       </div>
       <div class="mb-12 relative">
         <input
@@ -28,7 +28,7 @@
         <span class="absolute top-20 right-16 text-blue-400" @click="codeSend"
           >发送验证码 {{ countNum == 0 ? '' : `: ${countNum}s` }}</span
         >
-        <p class="mt-8 text-red font-12" v-if="formErrors.captcha.error">{{ formErrors.captcha.message }}</p>
+        <p v-if="formErrors.captcha.error" class="mt-8 text-red font-12">{{ formErrors.captcha.message }}</p>
       </div>
       <button
         class="w-full mt-32 h-100 bg-yellow-300 active:bg-yellow-400 rounded-16 text-32 text-normal"
