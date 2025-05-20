@@ -1,12 +1,14 @@
 {
-  "name": "activity",
+  "name": "web",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "format": "prettier --write --list-different src",
+    "lint:fix": "eslint src --ext .vue,.js,.jsx,.ts,.tsx --fix"
   },
   "dependencies": {
     "vue": "^3.4.21"
