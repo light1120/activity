@@ -1,6 +1,6 @@
 {
   "name": "activity",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "full stack of activity",
   "scripts": {
     "release": "standard-version",

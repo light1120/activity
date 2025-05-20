@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/light1120/activity/compare/v1.0.0...v1.1.0) (2025-05-20)
+
+
+### ✨ Features
+
+* add standard-version ([956828a](https://github.com/light1120/activity/commit/956828a2b4109415f0ad40e9fe37da57f8c1e747))
+
 ## 1.0.0 (2025-05-20)
 
 
